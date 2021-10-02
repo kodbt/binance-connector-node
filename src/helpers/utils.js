@@ -47,7 +47,7 @@ const createRequest = (config) => {
     headers: {
       'Content-Type': 'application/json',
       'X-MBX-APIKEY': apiKey,
-      Host: 'api.binance.com'
+      'Access-Control-Allow-Headers': 'X-MBX-APIKEY'
     }
   }).request({
     method,
