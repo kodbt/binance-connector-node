@@ -45,7 +45,6 @@ const createRequest = (config) => {
   return getRequestInstance({
     baseURL,
     headers: {
-      'Content-Type': 'application/json',
       'X-MBX-APIKEY': apiKey
     }
   }).request({
