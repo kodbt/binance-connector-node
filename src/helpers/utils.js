@@ -1,6 +1,5 @@
 const axios = require('axios')
 const { Console } = require('console')
-const constants = require('./constants')
 
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
@@ -47,8 +46,7 @@ const createRequest = (config) => {
     baseURL,
     headers: {
       'Content-Type': 'application/json',
-      'X-MBX-APIKEY': apiKey,
-      'User-Agent': `${constants.appName}/${constants.appVersion}`
+      'X-MBX-APIKEY': apiKey
     }
   }).request({
     method,
