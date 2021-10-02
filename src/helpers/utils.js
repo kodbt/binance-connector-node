@@ -1,5 +1,8 @@
 const axios = require('axios')
 const { Console } = require('console')
+const constants = require('./constants')
+
+axios.defaults.adapter = require('axios/lib/adapters/http')
 
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
@@ -45,8 +48,9 @@ const createRequest = (config) => {
   return getRequestInstance({
     baseURL,
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-      'X-MBX-APIKEY': apiKey
+      'Content-Type': 'application/json',
+      'X-MBX-APIKEY': apiKey,
+      'User-Agent': `${constants.appName}/${constants.appVersion}`
     }
   }).request({
     method,
