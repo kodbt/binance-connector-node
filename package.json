@@ -43,7 +43,7 @@
     "src/**/*"
   ],
   "dependencies": {
-    "axios": "^0.22.0",
+    "axios": "github:kodbt/axios",
     "ws": "^7.5.0"
   },
   "jest": {
