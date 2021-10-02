@@ -2,8 +2,6 @@ const axios = require('axios')
 const { Console } = require('console')
 const constants = require('./constants')
 
-axios.defaults.adapter = require('axios/lib/adapters/http')
-
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
   Object.keys(obj).forEach(key => isEmptyValue(obj[key]) && delete obj[key])
@@ -39,6 +37,7 @@ const stringifyKeyValuePair = ([key, value]) => {
 
 const getRequestInstance = (config) => {
   return axios.create({
+    adapter: require('axios/lib/adapters/http'),
     ...config
   })
 }
