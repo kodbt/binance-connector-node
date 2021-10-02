@@ -1,6 +1,7 @@
 const axios = require('axios')
 const { Console } = require('console')
 const constants = require('./constants')
+axios.defaults.adapter = require('axios/lib/adapters/http')
 
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
